@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarlinBurn", "MarlinBurn\MarlinBurn.csproj", "{329254FD-762F-4C59-B09A-18A79C2AC033}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{329254FD-762F-4C59-B09A-18A79C2AC033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329254FD-762F-4C59-B09A-18A79C2AC033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329254FD-762F-4C59-B09A-18A79C2AC033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329254FD-762F-4C59-B09A-18A79C2AC033}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7ED56725-BE1B-4761-A5B6-72749BB7770D}
+	EndGlobalSection
+EndGlobal
