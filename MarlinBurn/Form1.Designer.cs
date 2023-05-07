@@ -39,7 +39,6 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.XSizeTb = new System.Windows.Forms.TextBox();
             this.YSixeTb = new System.Windows.Forms.TextBox();
@@ -54,7 +53,17 @@
             this.HomeZCheckBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.MaterialThicknessTb = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.InvertEngrave = new System.Windows.Forms.CheckBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.EngravePowerTb = new System.Windows.Forms.TextBox();
+            this.MaxDiodePowerTb = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TimeRemainingTb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -71,9 +80,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(376, 134);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 178);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 451);
+            this.pictureBox1.Size = new System.Drawing.Size(1107, 645);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -142,20 +151,12 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 134);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(357, 689);
-            this.textBox1.TabIndex = 10;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(739, 800);
+            this.button3.Location = new System.Drawing.Point(1148, 802);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(121, 23);
             this.button3.TabIndex = 11;
@@ -185,7 +186,7 @@
             this.DpiTb.Name = "DpiTb";
             this.DpiTb.Size = new System.Drawing.Size(100, 20);
             this.DpiTb.TabIndex = 14;
-            this.DpiTb.Text = "12";
+            this.DpiTb.Text = "80";
             // 
             // label1
             // 
@@ -238,7 +239,7 @@
             this.NozzOffsY.Name = "NozzOffsY";
             this.NozzOffsY.Size = new System.Drawing.Size(100, 20);
             this.NozzOffsY.TabIndex = 19;
-            this.NozzOffsY.Text = "24";
+            this.NozzOffsY.Text = "50";
             this.NozzOffsY.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // NozzleOffsX
@@ -252,8 +253,6 @@
             // HomeZCheckBox
             // 
             this.HomeZCheckBox.AutoSize = true;
-            this.HomeZCheckBox.Checked = true;
-            this.HomeZCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.HomeZCheckBox.Location = new System.Drawing.Point(554, 51);
             this.HomeZCheckBox.Name = "HomeZCheckBox";
             this.HomeZCheckBox.Size = new System.Drawing.Size(64, 17);
@@ -276,23 +275,125 @@
             this.MaterialThicknessTb.Name = "MaterialThicknessTb";
             this.MaterialThicknessTb.Size = new System.Drawing.Size(100, 20);
             this.MaterialThicknessTb.TabIndex = 23;
-            this.MaterialThicknessTb.Text = "20";
+            this.MaterialThicknessTb.Text = "0";
             this.MaterialThicknessTb.TextChanged += new System.EventHandler(this.MaterialThicknessTb_TextChanged);
             // 
-            // textBox2
+            // label8
             // 
-            this.textBox2.Location = new System.Drawing.Point(376, 608);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(357, 215);
-            this.textBox2.TabIndex = 25;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(302, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "label8";
+            // 
+            // InvertEngrave
+            // 
+            this.InvertEngrave.AutoSize = true;
+            this.InvertEngrave.Location = new System.Drawing.Point(554, 101);
+            this.InvertEngrave.Name = "InvertEngrave";
+            this.InvertEngrave.Size = new System.Drawing.Size(53, 17);
+            this.InvertEngrave.TabIndex = 27;
+            this.InvertEngrave.Text = "Invert";
+            this.InvertEngrave.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1148, 773);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(121, 23);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Preview";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1148, 672);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(121, 23);
+            this.button5.TabIndex = 29;
+            this.button5.Text = "Stop";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(790, 81);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 13);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Engrave Power";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(790, 55);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Diode Power Limit";
+            // 
+            // EngravePowerTb
+            // 
+            this.EngravePowerTb.Location = new System.Drawing.Point(886, 78);
+            this.EngravePowerTb.Name = "EngravePowerTb";
+            this.EngravePowerTb.Size = new System.Drawing.Size(100, 20);
+            this.EngravePowerTb.TabIndex = 31;
+            this.EngravePowerTb.Text = "255";
+            // 
+            // MaxDiodePowerTb
+            // 
+            this.MaxDiodePowerTb.Location = new System.Drawing.Point(886, 52);
+            this.MaxDiodePowerTb.Name = "MaxDiodePowerTb";
+            this.MaxDiodePowerTb.Size = new System.Drawing.Size(100, 20);
+            this.MaxDiodePowerTb.TabIndex = 30;
+            this.MaxDiodePowerTb.Text = "255";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(790, 108);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 13);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Move Speed: ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(992, 78);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(138, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "255 = full diode, 100 mm / s";
+            // 
+            // TimeRemainingTb
+            // 
+            this.TimeRemainingTb.AutoSize = true;
+            this.TimeRemainingTb.Location = new System.Drawing.Point(1156, 595);
+            this.TimeRemainingTb.Name = "TimeRemainingTb";
+            this.TimeRemainingTb.Size = new System.Drawing.Size(83, 13);
+            this.TimeRemainingTb.TabIndex = 36;
+            this.TimeRemainingTb.Text = "Time Remaining";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 835);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1281, 837);
+            this.Controls.Add(this.TimeRemainingTb);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.EngravePowerTb);
+            this.Controls.Add(this.MaxDiodePowerTb);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.InvertEngrave);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.MaterialThicknessTb);
             this.Controls.Add(this.HomeZCheckBox);
@@ -307,7 +408,6 @@
             this.Controls.Add(this.YSixeTb);
             this.Controls.Add(this.XSizeTb);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox1);
@@ -335,7 +435,6 @@
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox XSizeTb;
         private System.Windows.Forms.TextBox YSixeTb;
@@ -350,7 +449,17 @@
         private System.Windows.Forms.CheckBox HomeZCheckBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox MaterialThicknessTb;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox InvertEngrave;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox EngravePowerTb;
+        private System.Windows.Forms.TextBox MaxDiodePowerTb;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label TimeRemainingTb;
     }
 }
 
